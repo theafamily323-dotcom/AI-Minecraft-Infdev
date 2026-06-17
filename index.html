@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Infdev</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.js"></script>
+</head>
+<body>
+    <div id="homeScreen" class="screen active">
+        <div class="menu-container">
+            <h1>Minecraft Infdev</h1>
+            <button id="newWorldBtn" class="menu-button">New World</button>
+            <button id="loadWorldBtn" class="menu-button">Load World</button>
+            <button id="settingsBtn" class="menu-button">Settings</button>
+        </div>
+    </div>
+
+    <div id="worldCreationScreen" class="screen">
+        <div class="menu-container">
+            <h1>Create World</h1>
+            <input type="text" id="worldName" placeholder="World Name" class="input-field">
+            <input type="text" id="worldSeed" placeholder="Seed (optional)" class="input-field">
+            <button id="createBtn" class="menu-button">Create</button>
+            <button id="backBtn" class="menu-button">Back</button>
+        </div>
+    </div>
+
+    <div id="gameScreen" class="screen">
+        <div id="gameContainer"></div>
+        <div id="hud">
+            <div id="crosshair">+</div>
+            <div id="hotbar">
+                <div class="hotbar-slot active" data-slot="0">Block</div>
+                <div class="hotbar-slot" data-slot="1">Dirt</div>
+                <div class="hotbar-slot" data-slot="2">Wood</div>
+                <div class="hotbar-slot" data-slot="3">Stone</div>
+                <div class="hotbar-slot" data-slot="4">Glass</div>
+            </div>
+            <div id="health">❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤</div>
+        </div>
+        <div id="pauseMenu" class="pause-menu hidden">
+            <div class="menu-container">
+                <h2>Paused</h2>
+                <button id="resumeBtn" class="menu-button">Resume</button>
+                <button id="homeBtn" class="menu-button">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/blocks.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
